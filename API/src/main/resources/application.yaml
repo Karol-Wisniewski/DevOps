@@ -1,0 +1,40 @@
+server:
+  port: 5000
+  error:
+    include-message: always
+  servlet:
+    context-path: /api
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+logging:
+  level:
+    org.springframework: INFO
+    org.springframework.test: DEBUG
+
+
+app:
+  cors:
+    allowed-origins: "*"
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
