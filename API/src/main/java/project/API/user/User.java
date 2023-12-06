@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.annotation.processing.Generated;
+// import javax.annotation.processing.Generated;
 import java.util.Date;
 
 @Entity

@@ -1,0 +1,56 @@
+# ENV and ARG example
+#ARG TAG=latest
+#FROM ubuntu:$TAG
+#LABEL maintainer=lrynski@sii.pl
+#ENV dev=lrynski
+#ENV APP_DIR=/usr/local/app/bin
+#CMD ["env"]
+
+
+# WORKDIR, COPY and ADD example
+#FROM ubuntu:latest
+#ARG DEBIAN_FRONTEND=noninteractive
+#RUN apt-get update && apt-get install apache2 -y
+#WORKDIR /var/www/html/
+#COPY index.html .
+#ADD https://upload.wikimedia.org/wikipedia/commons/2/27/Moby_lines_logo.png ./logo.png
+#CMD ["ls"]
+
+
+# USER
+#FROM ubuntu:latest
+#ARG DEBIAN_FRONTEND=noninteractive
+#RUN apt-get update && apt-get install apache2 -y
+#USER www-data
+#CMD ["whoami"]
+
+
+#FROM ubuntu:latest
+#ARG DEBIAN_FRONTEND=noninteractive
+#RUN apt-get update && apt-get install apache2 -y
+#VOLUME ["/var/log/apache2"]
+
+
+# FROM ubuntu:latest
+# ARG DEBIAN_FRONTEND=noninteractive
+# RUN apt-get update && apt-get install apache2 curl -y
+# HEALTHCHECK CMD curl -f http://localhost/ || exit 1
+# EXPOSE 80
+# ENTRYPOINT ["apache2ctl", "-D", "FOREGROUND"]
+
+
+#docker run -d --name db1 postgres:12.1
+#docker run -d --name db2 postgres:12.1
+#
+#docker ps
+#
+#docker volume ls
+#
+#docker inspect db1 --format="{{ json .Mounts }}"
+#docker inspect db2 --format="{{ json .Mounts }}"
+#
+#
+#docker run -d --rm --name db3Tmp postgres:12.1
+#docker inspect db3Tmp --format="{{ json .Mounts }}"
+#
+#docker volume ls
